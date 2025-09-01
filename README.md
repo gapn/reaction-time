@@ -35,7 +35,7 @@ Use the **Mouse** for drag and drop of your atoms
 
 - [ ] **Interactive Learning:** Learn the chemical formulas of common molecules like Water (H₂O) and Carbon Dioxide (CO₂) in a fun, hands-on way.
 - [ ] **Fast-Paced Timed Rounds:** Race against a 2-minute clock to combine as many atoms as you can. Perfect for a quick gaming session!
-- [ ] **Intuitive Drag-and-Drop Controls:** A simple and accessible interface where you just drag atoms to build molecules.
+- [x] **Intuitive Drag-and-Drop Controls:** A simple and accessible interface where you just drag atoms to build molecules.
 - [ ] **Dynamic Difficulty:** The game starts with simple molecules and gradually introduces more complex compounds as your score increases.
 
 ---
