@@ -5,39 +5,17 @@ const atomBankData = [
     { id: 2, element: 'H' },
     { id: 3, element: 'H' },
     { id: 4, element: 'O' },
-    { id: 5, element: 'O' },
-    { id: 6, element: 'C' }
 ];
+
+let nextAtomId = 5;
+
+let molecules = [];
 
 const bankWidth = 200;
-const molecules = [
-    {
-        name: 'Water',
-        formula: 'H₂O',
-        points: 2,
-        atoms: [ { id: 'o1', type: 'O' }, { id: 'h1', type: 'H' }, { id: 'h2', type: 'H' }, ],
-        bonds: [ ['o1', 'h1'], ['o1', 'h2'], ],
-    },
-    {
-        name: 'Hydrogen Peroxide',
-        formula: 'H₂O₂',
-        points: 4,
-        atoms: [ { id: 'h1', type: 'H' }, { id: 'o1', type: 'O' }, { id: 'o2', type: 'O' }, { id: 'h2', type: 'H' }, ],
-        bonds: [ ['h1', 'o1'], ['o1', 'o2'], ['o2', 'h2'], ],
-    },
-    {
-        name: 'Carbon Dioxide',
-        formula: 'CO₂',
-        points: 3,
-        atoms: [ { id: 'c1', type: 'C' }, { id: 'o1', type: 'O' }, { id: 'o2', type: 'O' }, ],
-        bonds: [ ['c1', 'o1'], ['c1', 'o2'], ],
-    },
-    // Will add more complex molecules here later
-];
-
-const currentMolecule = molecules[Math.max(0,Math.floor(Math.random() * 3 - 0.01))];
-document.getElementById('molecule-name').textContent = currentMolecule.name;
-document.getElementById('molecule-formula').innerHTML = currentMolecule.formula;
+let score = 0;
+let timeLeft = 30;
+let timerInterval = null;
+let currentMoleculeIndex = 0;
 
 const gameBoard = document.getElementById('game-board');
 
@@ -57,6 +35,47 @@ function populateAtomBank() {
         atomElement.style.left = `${bankAreaStart}px`;
         atomElement.style.top = `${20 + index * 65}px`;
         gameBoard.appendChild(atomElement);
+    });
+}
+
+function replenishAtomBank(atomsToAdd) {
+    const boardWidth = gameBoard.offsetWidth;
+    const bankAreaX = boardWidth - (bankWidth / 1.5);
+    const startY = 20;
+    const gap = 65;
+
+    const bankAtoms = Array.from(document.querySelectorAll('.atom'))
+        .filter(atom => atom.offsetLeft >= (boardWidth - bankWidth));
+
+    atomsToAdd.forEach(atomData => {
+        let placed = false;
+        let potentialY = startY;
+
+        while (!placed) {
+            let spotOccupied = false;
+            for (const existingAtom of bankAtoms) {
+                if (Math.abs(existingAtom.offsetTop - potentialY) < gap / 2) {
+                    spotOccupied = true;
+                    break;
+                }
+            }
+
+            if (!spotOccupied) {
+                const atomElement = document.createElement('div');
+                atomElement.className = `atom atom-${atomData.element.toLowerCase()}`;
+                atomElement.textContent = atomData.element;
+                atomElement.dataset.id = nextAtomId++;
+                atomElement.style.position = 'absolute';
+                atomElement.style.left = `${bankAreaX}px`;
+                atomElement.style.top = `${potentialY}px`;
+                gameBoard.appendChild(atomElement);
+                
+                bankAtoms.push(atomElement);
+                placed = true;
+            } else {
+                potentialY += gap;
+            }
+        }
     });
 }
 
@@ -138,6 +157,7 @@ function doAtomsOverlap(atom1, atom2) {
 }
 
 function checkMolecule() {
+    const currentMolecule = molecules[currentMoleculeIndex];
     console.log(`checking for ${currentMolecule.name}`);
     const boardWidth = gameBoard.offsetWidth;
     const bankBoundary = boardWidth - bankWidth;
@@ -145,12 +165,6 @@ function checkMolecule() {
     const atomsInPlay = Array.from(document.querySelectorAll('.atom')).filter(
         atom => atom.offsetLeft < bankBoundary
     );
-    const requiredCounts = {};
-    currentMolecule.atoms.forEach(atom =>
-        requiredCounts[atom.type] = (requiredCounts[atom.type] || 0) + 1
-    );
-
-   
 
     const requiredBondCounts = {};
     currentMolecule.atoms.forEach(atom => requiredBondCounts[atom.id] = 0);
@@ -162,9 +176,29 @@ function checkMolecule() {
     const isCorrect = findValidArrangement(atomsInPlay, currentMolecule.atoms, currentMolecule.bonds, requiredBondCounts);
 
     if (isCorrect) {
-        alert(`success, you built ${currentMolecule.name} and scored ${currentMolecule.points}`)
+
+        score += timeLeft;
+        timeLeft += 5;
+
+        if (currentMolecule.atomsToAdd && currentMolecule.atomsToAdd.length > 0) {
+            replenishAtomBank(currentMolecule.atomsToAdd);
+        }
+
+        currentMoleculeIndex++;
+
+        if (currentMoleculeIndex >= molecules.length) {
+            clearInterval(timerInterval);
+            alert(`Congratulations! You've built all the molecules! Final Score: ${score}`);
+            document.getElementById('check-button').disabled = true;
+        } else {
+            loadMolecule(currentMoleculeIndex);
+        }
+
+        updateDisplay();
     } else {
         alert('atoms are not connected correctly, check your bonds')
+        timeLeft -= 5;
+        updateDisplay();
     };
 }
 
@@ -214,3 +248,47 @@ function findValidArrangement(availableBoardAtoms, atomsToAssign, requiredBonds,
 
     return false;
 }
+
+function updateDisplay() {
+    document.getElementById('score-display').textContent = score;
+    document.getElementById('time-display').textContent = timeLeft;
+}
+
+function startGame() {
+    score = 0;
+    timeLeft = 60;
+    currentMoleculeIndex = 0;
+    loadMolecule(currentMoleculeIndex);
+    updateDisplay();
+
+    // Start the countdown
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        updateDisplay();
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval); // Stop the timer
+            alert(`Game Over! Your final score is: ${score}`);
+            document.getElementById('check-button').disabled = true; // Disable checking
+        }
+    }, 1000);
+}
+
+function loadMolecule(index) {
+    const molecule = molecules[index];
+    document.getElementById('molecule-name').textContent = molecule.name;
+    document.getElementById('molecule-formula').innerHTML = molecule.formula;
+}
+
+function gameOver(message) {
+    clearInterval(timerInterval); // Stop the timer
+    alert(`Game Over! ${message}\nYour final score is: ${score}`);
+    document.getElementById('check-button').disabled = true; // Disable checking
+}
+
+async function loadGameData() {
+    const response = await fetch('molecules.json');
+    molecules = await response.json();
+    startGame();
+}
+loadGameData();

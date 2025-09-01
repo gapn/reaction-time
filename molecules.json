@@ -1,0 +1,142 @@
+[
+    {
+        "name": "Water",
+        "formula": "H₂O",
+        "atoms": [ { "id": "o1", "type": "O" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" } ],
+        "bonds": [ ["o1", "h1"], ["o1", "h2"] ],
+        "atomsToAdd": [ { "element": "O" } ]
+    },
+    {
+        "name": "Hydrogen Peroxide",
+        "formula": "H₂O₂",
+        "atoms": [ { "id": "h1", "type": "H" }, { "id": "o1", "type": "O" }, { "id": "o2", "type": "O" }, { "id": "h2", "type": "H" } ],
+        "bonds": [ ["h1", "o1"], ["o1", "o2"], ["o2", "h2"] ],
+        "atomsToAdd": [ { "element": "N" }, { "element": "H" } ]
+    },
+    {
+        "name": "Ammonia",
+        "formula": "NH₃",
+        "atoms": [ { "id": "n1", "type": "N" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" } ],
+        "bonds": [ ["n1", "h1"], ["n1", "h2"], ["n1", "h3"] ],
+        "atomsToAdd": [ { "element": "C" }, { "element": "H" } ]
+    },
+    {
+        "name": "Methane",
+        "formula": "CH₄",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" } ],
+        "bonds": [ ["c1", "h1"], ["c1", "h2"], ["c1", "h3"], ["c1", "h4"] ],
+        "atomsToAdd": [ { "element": "O" }, { "element": "O" } ]
+    },
+    {
+        "name": "Carbon Dioxide",
+        "formula": "CO₂",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "o1", "type": "O" }, { "id": "o2", "type": "O" } ],
+        "bonds": [ ["c1", "o1"], ["c1", "o2"] ],
+        "atomsToAdd": [ { "element": "H" }, { "element": "H" } ]
+    },
+    {
+        "name": "Formaldehyde",
+        "formula": "CH₂O",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "o1", "type": "O" } ],
+        "bonds": [ ["c1", "h1"], ["c1", "h2"], ["c1", "o1"] ],
+        "atomsToAdd": [ { "element": "H" }, { "element": "H" } ]
+    },
+    {
+        "name": "Methanol",
+        "formula": "CH₃OH",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "o1", "type": "O" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" } ],
+        "bonds": [ ["c1", "h1"], ["c1", "h2"], ["c1", "h3"], ["c1", "o1"], ["o1", "h4"] ],
+        "atomsToAdd": [ { "element": "C" }, { "element": "H" }, { "element": "H" } ]
+    },
+    {
+        "name": "Ethane",
+        "formula": "C₂H₆",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "c2", "type": "C" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" }, { "id": "h5", "type": "H" }, { "id": "h6", "type": "H" } ],
+        "bonds": [ ["c1", "c2"], ["c1", "h1"], ["c1", "h2"], ["c1", "h3"], ["c2", "h4"], ["c2", "h5"], ["c2", "h6"] ],
+        "atomsToAdd": [ { "element": "O" } ]
+    },
+    {
+        "name": "Ethanol",
+        "formula": "C₂H₅OH",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "c2", "type": "C" }, { "id": "o1", "type": "O" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" }, { "id": "h5", "type": "H" }, { "id": "h6", "type": "H" } ],
+        "bonds": [ ["c1", "c2"], ["c1", "h1"], ["c1", "h2"], ["c2", "h3"], ["c2", "h4"], ["c2", "o1"], ["o1", "h5"] ],
+        "atomsToAdd": [ { "element": "O" } ]
+    },
+    {
+        "name": "Acetic Acid",
+        "formula": "CH₃COOH",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "c2", "type": "C" }, { "id": "o1", "type": "O" }, { "id": "o2", "type": "O" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" } ],
+        "bonds": [ ["c1", "h1"], ["c1", "h2"], ["c1", "h3"], ["c1", "c2"], ["c2", "o1"], ["c2", "o2"], ["o2", "h4"] ],
+        "atomsToAdd": []
+    },
+    {
+        "name": "Acetylene",
+        "formula": "C₂H₂",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "c2", "type": "C" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" } ],
+        "bonds": [ ["h1", "c1"], ["c1", "c2"], ["c2", "h2"] ],
+        "atomsToAdd": [ { "element": "N" } ]
+    },
+    {
+        "name": "Hydrogen Cyanide",
+        "formula": "HCN",
+        "atoms": [ { "id": "h1", "type": "H" }, { "id": "c1", "type": "C" }, { "id": "n1", "type": "N" } ],
+        "bonds": [ ["h1", "c1"], ["c1", "n1"] ],
+        "atomsToAdd": [ { "element": "C" }, { "element": "C" }, { "element": "C" }, { "element": "C" }, { "element": "H" }, { "element": "H" }, { "element": "H" }, { "element": "H" }, { "element": "H" }, { "element": "H" } ]
+    },
+    {
+        "name": "Cyclohexane",
+        "formula": "C₆H₁₂",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "c2", "type": "C" }, { "id": "c3", "type": "C" }, { "id": "c4", "type": "C" }, { "id": "c5", "type": "C" }, { "id": "c6", "type": "C" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" }, { "id": "h5", "type": "H" }, { "id": "h6", "type": "H" }, { "id": "h7", "type": "H" }, { "id": "h8", "type": "H" }, { "id": "h9", "type": "H" }, { "id": "h10", "type": "H" }, { "id": "h11", "type": "H" }, { "id": "h12", "type": "H" } ],
+        "bonds": [ ["c1", "c2"], ["c2", "c3"], ["c3", "c4"], ["c4", "c5"], ["c5", "c6"], ["c6", "c1"], ["c1", "h1"], ["c1", "h2"], ["c2", "h3"], ["c2", "h4"], ["c3", "h5"], ["c3", "h6"], ["c4", "h7"], ["c4", "h8"], ["c5", "h9"], ["c5", "h10"], ["c6", "h11"], ["c6", "h12"] ],
+        "atomsToAdd": []
+    },
+    {
+        "name": "Benzene",
+        "formula": "C₆H₆",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "c2", "type": "C" }, { "id": "c3", "type": "C" }, { "id": "c4", "type": "C" }, { "id": "c5", "type": "C" }, { "id": "c6", "type": "C" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" }, { "id": "h5", "type": "H" }, { "id": "h6", "type": "H" } ],
+        "bonds": [ ["c1", "c2"], ["c2", "c3"], ["c3", "c4"], ["c4", "c5"], ["c5", "c6"], ["c6", "c1"], ["c1", "h1"], ["c2", "h2"], ["c3", "h3"], ["c4", "h4"], ["c5", "h5"], ["c6", "h6"] ],
+        "atomsToAdd": [ { "element": "O" }, { "element": "H" } ]
+    },
+    {
+        "name": "Phenol",
+        "formula": "C₆H₅OH",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "c2", "type": "C" }, { "id": "c3", "type": "C" }, { "id": "c4", "type": "C" }, { "id": "c5", "type": "C" }, { "id": "c6", "type": "C" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" }, { "id": "h5", "type": "H" }, { "id": "o1", "type": "O" }, { "id": "h6", "type": "H" } ],
+        "bonds": [ ["c1", "c2"], ["c2", "c3"], ["c3", "c4"], ["c4", "c5"], ["c5", "c6"], ["c6", "c1"], ["c1", "h1"], ["c2", "h2"], ["c3", "h3"], ["c4", "h4"], ["c5", "h5"], ["c6", "o1"], ["o1", "h6"] ],
+        "atomsToAdd": [ { "element": "C" }, { "element": "H" }, { "element": "H" }, { "element": "H" } ]
+    },
+    {
+        "name": "Toluene",
+        "formula": "C₇H₈",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "c2", "type": "C" }, { "id": "c3", "type": "C" }, { "id": "c4", "type": "C" }, { "id": "c5", "type": "C" }, { "id": "c6", "type": "C" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" }, { "id": "h5", "type": "H" }, { "id": "c7", "type": "C" }, { "id": "h6", "type": "H" }, { "id": "h7", "type": "H" }, { "id": "h8", "type": "H" } ],
+        "bonds": [ ["c1", "c2"], ["c2", "c3"], ["c3", "c4"], ["c4", "c5"], ["c5", "c6"], ["c6", "c1"], ["c1", "h1"], ["c2", "h2"], ["c3", "h3"], ["c4", "h4"], ["c5", "h5"], ["c6", "c7"], ["c7", "h6"], ["c7", "h7"], ["c7", "h8"] ],
+        "atomsToAdd": [ { "element": "C" }, { "element": "C" }, { "element": "C" }, { "element": "H" } ]
+    },
+    {
+        "name": "Naphthalene",
+        "formula": "C₁₀H₈",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "c2", "type": "C" }, { "id": "c3", "type": "C" }, { "id": "c4", "type": "C" }, { "id": "c5", "type": "C" }, { "id": "c6", "type": "C" }, { "id": "c7", "type": "C" }, { "id": "c8", "type": "C" }, { "id": "c9", "type": "C" }, { "id": "c10", "type": "C" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" }, { "id": "h5", "type": "H" }, { "id": "h6", "type": "H" }, { "id": "h7", "type": "H" }, { "id": "h8", "type": "H" } ],
+        "bonds": [ ["c1", "c2"], ["c2", "c3"], ["c3", "c4"], ["c4", "c10"], ["c10", "c5"], ["c5", "c6"], ["c6", "c7"], ["c7", "c8"], ["c8", "c9"], ["c9", "c1"], ["c9", "c10"], ["c1", "h1"], ["c2", "h2"], ["c3", "h3"], ["c4", "h4"], ["c5", "h5"], ["c6", "h6"], ["c7", "h7"], ["c8", "h8"] ],
+        "atomsToAdd": [ { "element": "N" }, { "element": "O" }, { "element": "O" } ]
+    },
+    {
+        "name": "Glycine (Amino Acid)",
+        "formula": "C₂H₅NO₂",
+        "atoms": [ { "id": "n1", "type": "N" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "c1", "type": "C" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" }, { "id": "c2", "type": "C" }, { "id": "o1", "type": "O" }, { "id": "o2", "type": "O" }, { "id": "h5", "type": "H" } ],
+        "bonds": [ ["h1", "n1"], ["h2", "n1"], ["n1", "c1"], ["c1", "h3"], ["c1", "h4"], ["c1", "c2"], ["c2", "o1"], ["c2", "o2"], ["o2", "h5"] ],
+        "atomsToAdd": []
+    },
+    {
+        "name": "Urea",
+        "formula": "CH₄N₂O",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "o1", "type": "O" }, { "id": "n1", "type": "N" }, { "id": "n2", "type": "N" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" } ],
+        "bonds": [ ["o1", "c1"], ["c1", "n1"], ["c1", "n2"], ["n1", "h1"], ["n1", "h2"], ["n2", "h3"], ["n2", "h4"] ],
+        "atomsToAdd": []
+    },
+    {
+        "name": "Glycerol",
+        "formula": "C₃H₈O₃",
+        "atoms": [ { "id": "c1", "type": "C" }, { "id": "c2", "type": "C" }, { "id": "c3", "type": "C" }, { "id": "o1", "type": "O" }, { "id": "o2", "type": "O" }, { "id": "o3", "type": "O" }, { "id": "h1", "type": "H" }, { "id": "h2", "type": "H" }, { "id": "h3", "type": "H" }, { "id": "h4", "type": "H" }, { "id": "h5", "type": "H" }, { "id": "h6", "type": "H" }, { "id": "h7", "type": "H" }, { "id": "h8", "type": "H" } ],
+        "bonds": [ ["c1", "c2"], ["c2", "c3"], ["c1", "o1"], ["c2", "o2"], ["c3", "o3"], ["c1", "h1"], ["c1", "h2"], ["c2", "h3"], ["c3", "h4"], ["c3", "h5"], ["o1", "h6"], ["o2", "h7"], ["o3", "h8"] ],
+        "atomsToAdd": []
+    }
+]

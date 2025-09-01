@@ -14,14 +14,14 @@ But be careful, if you choose the wrong atoms, it can be a catastrophic event. A
 
 ## 🚀 Live Demo
 
-A live version of this project can be viewed here: **[View Live Demo](link.will.go.here)**
+A live version of this project can be viewed here: **[View Live Demo](https://gapn.github.io/reaction-time/)**
 
 ---
 
 ## 🕹️ How to Play
 
 * Your objective is to build as many molecules as you can.
-* You start with **2 minutes** on the clock and **earn more time** with each correct combination.
+* You start with **1 minute** on the clock and **earn more time** with each correct combination.
 * The game ends when the **timer runs out** or when you make a **catastrophic mistake** of chosing the wrong atoms for your molecule.
 
 ---
@@ -34,9 +34,9 @@ Use the **Mouse** for drag and drop of your atoms
 ## Key Features
 
 - [x] **Interactive Learning:** Learn the chemical formulas of common molecules like Water (H₂O) and Carbon Dioxide (CO₂) in a fun, hands-on way.
-- [ ] **Fast-Paced Timed Rounds:** Race against a 2-minute clock to combine as many atoms as you can. Perfect for a quick gaming session!
+- [x] **Fast-Paced Timed Rounds:** Race against a 1-minute clock to combine as many atoms as you can. Perfect for a quick gaming session!
 - [x] **Intuitive Drag-and-Drop Controls:** A simple and accessible interface where you just drag atoms to build molecules.
-- [ ] **Dynamic Difficulty:** The game starts with simple molecules and gradually introduces more complex compounds as your score increases.
+- [x] **Dynamic Difficulty:** The game starts with simple molecules and gradually introduces more complex compounds as your score increases.
 
 ---
 

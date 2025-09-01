@@ -69,6 +69,12 @@ body {
     height: 30px;
     font-size: 1.5rem;
 }
+.atom-n {
+    background-color: yellow;
+    width: 34px;
+    height: 34px;
+    font-size: 1.5rem;
+}
 
 .selected-atom {
     background-color: aqua;
